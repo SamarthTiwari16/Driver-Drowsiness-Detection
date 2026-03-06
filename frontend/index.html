@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Driver Drowsiness Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="highlight">GuardAI</span> Drowsiness Monitor</h1>
+            <p>Real-time edge-to-cloud driver safety monitoring</p>
+        </header>
+
+        <main>
+            <div class="video-section">
+                <div class="video-container">
+                    <video id="webcam" autoplay playsinline muted></video>
+                    <canvas id="overlay"></canvas>
+                    <div id="status-badge" class="badge">INITIALIZING</div>
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <div class="stat-card">
+                    <span class="label">Eye Status</span>
+                    <span id="eye-status" class="value">Detecting...</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Drowsiness Score</span>
+                    <div class="progress-bar">
+                        <div id="score-fill" class="fill"></div>
+                    </div>
+                    <span id="score-text" class="value">0 / 15</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Confidence</span>
+                    <span id="confidence" class="value">0%</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div id="connection-status">
+                <span class="dot"></span> WebSocket Disconnected
+            </div>
+            <button id="start-btn" class="primary-btn">Start Monitoring</button>
+        </footer>
+    </div>
+    <audio id="alarm-sound" src="alarm.wav" preload="auto" loop></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>

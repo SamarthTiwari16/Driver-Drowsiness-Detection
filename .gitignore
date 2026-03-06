@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment variables
+.env
+.flaskenv
+
+# Temporary files
+pip_list.txt
+error_log.txt
+server_log.txt
+backend/server_log.txt
+backend/pip_list.txt
+
+# OS
+.DS_Store
+Thumbs.db
