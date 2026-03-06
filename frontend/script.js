@@ -14,8 +14,7 @@ let intervalId = null;
 const FRAME_RATE = 10; // FPS
 const WS_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "ws://localhost:8000/ws"
-    : `wss://${window.location.hostname.replace('vercel.app', 'onrender.com')}/ws`;
-// Note: The logic above is a template. Usually, you'd hardcode your specific Render URL here.
+    : "wss://driver-drowsiness-detection-1snh.onrender.com/ws";
 
 async function startCamera() {
     try {
