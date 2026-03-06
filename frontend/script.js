@@ -12,7 +12,10 @@ let ws = null;
 let stream = null;
 let intervalId = null;
 const FRAME_RATE = 10; // FPS
-const WS_URL = "ws://localhost:8000/ws";
+const WS_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "ws://localhost:8000/ws"
+    : `wss://${window.location.hostname.replace('vercel.app', 'onrender.com')}/ws`;
+// Note: The logic above is a template. Usually, you'd hardcode your specific Render URL here.
 
 async function startCamera() {
     try {
