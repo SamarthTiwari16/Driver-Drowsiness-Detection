@@ -3,5 +3,5 @@ uvicorn[standard]
 websockets
 opencv-python-headless
 numpy
-tensorflow
+tensorflow-cpu
 tf-keras
